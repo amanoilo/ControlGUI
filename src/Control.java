@@ -22,16 +22,13 @@ public class Control extends JFrame {
     {
     	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	setTitle("Game Controls");
-    	setSize(100,300);
+    	setSize(400,400);
     	JPanel panel = createTurnPanel();
     	add(panel, BorderLayout.WEST);
     	
-    	panel = createNextPlayerPanel();
+    	panel = createActionPanel();
     	add(panel, BorderLayout.WEST);
 
-    	panel = createAccusePanel();
-    	add(panel, BorderLayout.WEST);
-    	
     	panel = createDiePanel();
     	add(panel, BorderLayout.EAST);
 
@@ -49,19 +46,23 @@ public class Control extends JFrame {
     	return panel;
     }
     
-    private JPanel createNextPlayerPanel()
+    private JPanel createActionPanel()
     {
     	JButton next = new JButton("Next Player");
+    	JButton accuse = new JButton("Accuse");
+
     	JPanel panel = new JPanel();
     	panel.add(next);
+    	panel.add(accuse);
+    	
+		setLayout(new GridLayout(2, 1));
+
     	return panel;
     }
     
     private JPanel createAccusePanel()
     {
-    	JButton accuse = new JButton("Make an Accusation");
     	JPanel panel = new JPanel();
-    	panel.add(accuse);
     	return panel;
     }
     
